@@ -1,0 +1,13 @@
+<h1>Create a new tadpole for <%= @frog.name %></h1>
+
+<%= form_for @tadpole, url: {action: "create"} do |f| %>
+  <%= f.label :name %>:
+  <%= f.text_field :name %><br />
+  
+  <input type="hidden" id="tadpole[color]" name="tadpole[color]" value="<%= @frog.color %>">
+  <input type="hidden" name="tadpole[frog_id]" value="<%= @frog.id %>">
+
+  <%= f.submit "Create" %>
+<% end %>
+
+<a href="/tadpoles">Cancel</a>

@@ -1,0 +1,15 @@
+<h1>Edit <%= @frog.name %></h1>
+
+<%= form_for @frog, url: {action: "update"} do |f| %>
+  <%= f.label :name %>:
+  <%= f.text_field :name %><br />
+
+  <%= f.label :color %>:
+  <%= f.text_field :color %><br />
+
+  <%= collection_select(:frog, :pond_id, Pond.all, :id, :name, :prompt => true) %>
+  
+  <%= f.submit "Update" %>
+<% end %>
+
+<a href="/frogs">Cancel</a>

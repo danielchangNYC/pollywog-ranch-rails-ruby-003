@@ -1,4 +1,12 @@
 PollywogRanchRailsRuby003::Application.routes.draw do
+  root "root#index"
+
+  resources :tadpoles
+  get 'tadpoles/:id/evolve' => 'tadpoles#evolve'
+  get 'frogs/:id/tadpoles/new' => 'tadpoles#new'
+
+  resources :frogs, :ponds
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

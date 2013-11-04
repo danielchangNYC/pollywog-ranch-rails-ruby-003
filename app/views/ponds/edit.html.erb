@@ -1,0 +1,12 @@
+<h1>Edit <%= @pond.name %></h1>
+
+<%= form_for @pond, url: {action: "update"} do |f| %>
+  <%= f.label :name %>:
+  <%= f.text_field :name %><br />
+
+  <%= f.label :water_type %>:
+  <%= f.text_field :water_type %><br />
+
+  <%= f.submit "Update" %>
+<% end %>
+<a href="/ponds">Cancel</a>
